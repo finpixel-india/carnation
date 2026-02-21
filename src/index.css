@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --color-creamy-white: #fdfcfb;
+  --color-creamy-dark: #0a0a0a;
+
+  /* Glassmorphism Variables */
+  --color-glass-bg: rgba(253, 252, 251, 0.08);
+  --color-glass-border: rgba(253, 252, 251, 0.2);
+  --color-glass-glow: rgba(253, 252, 251, 0.15);
+
+  --color-hud-accent: #eaeaea;
+  --color-hud-alert: #ff4d4d;
+
+  --font-family-base: 'Outfit', 'Inter', system-ui, sans-serif;
+  --font-family-display: 'Syncopate', sans-serif;
+}
+
+@layer base {
+  body {
+    position: relative;
+    background-color: var(--color-creamy-dark);
+    color: var(--color-creamy-white);
+    font-family: var(--font-family-base);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--color-creamy-white);
+    color: var(--color-creamy-dark);
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease-out;
+    will-change: transform, backdrop-filter;
+    transform: translateZ(0);
+  }
+
+  .glass-panel:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+  }
+
+  .glass-footer {
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .text-primary-high {
+    color: #1A1A1A !important;
+  }
+
+  .text-secondary-high {
+    color: #4A4A4A !important;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 12px rgba(253, 252, 251, 0.4), 0 0 24px rgba(253, 252, 251, 0.2);
+  }
+
+  .border-glow {
+    box-shadow: inset 0 0 0 1px rgba(253, 252, 251, 0.1), 0 0 20px rgba(253, 252, 251, 0.15);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
