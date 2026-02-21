@@ -40,12 +40,12 @@ const Dogfight = () => {
                     </div>
 
                     {/* Data Display */}
-                    <div className="w-full max-w-3xl min-h-[160px] md:min-h-[120px] relative">
+                    <div className="w-full max-w-3xl min-h-[350px] sm:min-h-[250px] md:min-h-[150px] flex flex-col items-center">
                         {mode === 'AEROSPACE' && (
                             <motion.div
                                 initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
                                 animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-                                className="absolute inset-0 flex flex-col items-center justify-center"
+                                className="w-full flex flex-col items-center"
                             >
                                 <p className="text-lg md:text-2xl font-bold text-[#1A1A1A] leading-relaxed max-w-2xl">
                                     "Mach dynamics applied to terrestrial surfaces. The fuselage is designed identical to a 5th-generation fighter jet, channeling air to eliminate drag completely."
@@ -70,7 +70,7 @@ const Dogfight = () => {
                             <motion.div
                                 initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
                                 animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-                                className="absolute inset-0 flex flex-col items-center justify-center"
+                                className="w-full flex flex-col items-center"
                             >
                                 <p className="text-lg md:text-2xl font-bold text-[#1A1A1A] leading-relaxed max-w-2xl">
                                     "Hyper-adaptive suspension geometry. The liquid-metal chassis stiffens on high-speed cornering to maintain absolute adherence to the asphalt."
