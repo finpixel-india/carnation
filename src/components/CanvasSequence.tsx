@@ -97,7 +97,7 @@ const CanvasSequence = ({ scrollYProgress }: CanvasSequenceProps) => {
         <div className="absolute inset-0 w-full h-full z-0 bg-black">
             <canvas
                 ref={canvasRef}
-                className="w-full h-full object-cover opacity-80"
+                className="w-full h-full object-cover"
                 style={{ width: '100%', height: '100%' }}
             />
             {/* Loading State Overlay */}

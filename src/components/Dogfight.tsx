@@ -7,6 +7,9 @@ const Dogfight = () => {
     return (
         <section id="dogfight" className="relative w-full min-h-screen py-32 px-4 md:px-12 z-10 overflow-hidden flex flex-col items-center justify-center">
 
+            {/* Decorative radial glow */}
+            <div className="absolute top-1/3 right-0 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(212,160,168,0.12)_0%,transparent_70%)] pointer-events-none" />
+
             {/* Massive Glass Overlay Box */}
             <motion.div
                 initial={{ opacity: 0, y: 60 }}
@@ -14,6 +17,7 @@ const Dogfight = () => {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 1, ease: "easeOut" }}
                 className="relative z-10 w-full max-w-6xl p-10 md:p-20 glass-panel cursor-default animate-[float_6s_ease-in-out_infinite]"
+                style={{ animation: 'float 6s ease-in-out infinite, subtle-glow 4s ease-in-out infinite' }}
             >
                 <div className="flex flex-col items-center text-center">
                     <span className="text-[10px] font-mono uppercase tracking-[0.5em] text-[#4A4A4A] block mb-4 font-extrabold">
@@ -24,16 +28,16 @@ const Dogfight = () => {
                     </h2>
 
                     {/* Interactive Switch */}
-                    <div className="flex items-center gap-2 md:gap-6 mb-16 p-2 rounded-full glass-panel !shadow-inner bg-[rgba(255,255,255,0.2)] border-[rgba(255,255,255,0.8)]">
+                    <div className="flex items-center gap-2 md:gap-6 mb-16 p-2 rounded-full glass-panel !shadow-inner !bg-[linear-gradient(135deg,rgba(255,235,240,0.3),rgba(255,255,255,0.2))] border-[rgba(255,220,228,0.5)]">
                         <button
                             onClick={() => setMode('AEROSPACE')}
-                            className={`px-6 py-3 rounded-full font-mono text-[10px] tracking-[0.2em] uppercase transition-all duration-300 font-extrabold ${mode === 'AEROSPACE' ? 'bg-[#1A1A1A] text-[#FFFFFF] shadow-md' : 'text-[#4A4A4A] hover:text-[#1A1A1A]'}`}
+                            className={`px-6 py-3 rounded-full font-mono text-[10px] tracking-[0.2em] uppercase transition-all duration-300 font-extrabold ${mode === 'AEROSPACE' ? 'bg-gradient-to-r from-[#2a1f22] to-[#1A1A1A] text-[#FFFFFF] shadow-[0_4px_16px_rgba(196,130,138,0.3)]' : 'text-[#4A4A4A] hover:text-[#C4828A]'}`}
                         >
                             Aerospace
                         </button>
                         <button
                             onClick={() => setMode('AUTOMOTIVE')}
-                            className={`px-6 py-3 rounded-full font-mono text-[10px] tracking-[0.2em] uppercase transition-all duration-300 font-extrabold ${mode === 'AUTOMOTIVE' ? 'bg-[#1A1A1A] text-[#FFFFFF] shadow-md' : 'text-[#4A4A4A] hover:text-[#1A1A1A]'}`}
+                            className={`px-6 py-3 rounded-full font-mono text-[10px] tracking-[0.2em] uppercase transition-all duration-300 font-extrabold ${mode === 'AUTOMOTIVE' ? 'bg-gradient-to-r from-[#2a1f22] to-[#1A1A1A] text-[#FFFFFF] shadow-[0_4px_16px_rgba(196,130,138,0.3)]' : 'text-[#4A4A4A] hover:text-[#C4828A]'}`}
                         >
                             Automotive
                         </button>
@@ -50,7 +54,7 @@ const Dogfight = () => {
                                 <p className="text-lg md:text-2xl font-bold text-[#1A1A1A] leading-relaxed max-w-2xl">
                                     "Mach dynamics applied to terrestrial surfaces. The fuselage is designed identical to a 5th-generation fighter jet, channeling air to eliminate drag completely."
                                 </p>
-                                <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 w-full border-t border-[rgba(255,255,255,0.8)] pt-8">
+                                <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 w-full border-t border-[rgba(212,160,168,0.3)] pt-8">
                                     <div>
                                         <div className="text-[9px] font-mono tracking-[0.2em] text-[#4A4A4A] uppercase mb-1 font-extrabold">Drag Coef</div>
                                         <div className="font-mono text-xl md:text-2xl font-black text-[#1A1A1A] shadow-sm">0.12 Cd</div>
@@ -75,7 +79,7 @@ const Dogfight = () => {
                                 <p className="text-lg md:text-2xl font-bold text-[#1A1A1A] leading-relaxed max-w-2xl">
                                     "Hyper-adaptive suspension geometry. The liquid-metal chassis stiffens on high-speed cornering to maintain absolute adherence to the asphalt."
                                 </p>
-                                <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 w-full border-t border-[rgba(255,255,255,0.8)] pt-8">
+                                <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 w-full border-t border-[rgba(212,160,168,0.3)] pt-8">
                                     <div>
                                         <div className="text-[9px] font-mono tracking-[0.2em] text-[#4A4A4A] uppercase mb-1 font-extrabold">0-100 KM/H</div>
                                         <div className="font-mono text-xl md:text-2xl font-black text-[#1A1A1A] shadow-sm">1.2s</div>

@@ -10,6 +10,10 @@ const Specs = () => {
 
     return (
         <section id="specs" className="relative w-full min-h-screen py-32 px-6 md:px-12 z-10 overflow-hidden">
+
+            {/* Decorative pink radial glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(212,160,168,0.15)_0%,transparent_70%)] pointer-events-none" />
+
             <div className="max-w-7xl mx-auto relative z-10 flex flex-col justify-center h-full">
 
                 <motion.div
@@ -41,7 +45,7 @@ const Specs = () => {
                             <h3 className="font-display text-2xl md:text-3xl font-black tracking-widest text-[#1A1A1A] uppercase">
                                 {specs[0].title}
                             </h3>
-                            <div className="px-4 py-2 rounded-full border border-[rgba(255,255,255,0.8)] text-[10px] font-mono uppercase tracking-[0.2em] text-[#1A1A1A] bg-[rgba(255,255,255,0.6)] font-extrabold shadow-sm">
+                            <div className="px-4 py-2 rounded-full border border-[rgba(212,160,168,0.4)] text-[10px] font-mono uppercase tracking-[0.2em] text-[#1A1A1A] bg-[linear-gradient(135deg,rgba(255,230,235,0.6),rgba(255,255,255,0.5))] font-extrabold shadow-[0_2px_8px_rgba(212,160,168,0.12)]">
                                 Primary
                             </div>
                         </div>
@@ -88,7 +92,7 @@ const Specs = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-50px" }}
                         transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                        className="md:col-span-12 p-6 md:p-10 glass-panel animate-[float_4s_ease-in-out_infinite] flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
+                        className="md:col-span-12 p-6 md:p-10 glass-card-accent animate-[float_4s_ease-in-out_infinite] flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
                         style={{ animationDelay: '2s' }}
                     >
                         <div>
